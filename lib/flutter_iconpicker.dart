@@ -8,7 +8,7 @@ library flutter_iconpicker;
 export 'Models/IconPack.dart';
 export 'Serialization/iconDataSerialization.dart';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide SearchBar;
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/DefaultDialog.dart';
 import 'IconPicker/searchBar.dart';
@@ -17,7 +17,6 @@ import 'Models/IconPack.dart';
 class FlutterIconPicker {
   static Future<IconData?> showIconPicker(
     BuildContext context, {
-
     /// Defines if the searchbar will be
     /// shown above the icons
     bool showSearchBar = true,
