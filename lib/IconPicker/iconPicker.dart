@@ -44,7 +44,7 @@ class _IconPickerState extends State<IconPicker> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (widget.customIconPack != null) {
         if (mounted) widget.iconController.addAll(widget.customIconPack ?? {});
       }
@@ -100,8 +100,8 @@ class _IconPickerState extends State<IconPicker> {
                     itemCount: controller.length,
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                       childAspectRatio: 1 / 1,
-                      mainAxisSpacing: 5,
-                      crossAxisSpacing: 5,
+                      mainAxisSpacing: widget.mainAxisSpacing ?? 5,
+                      crossAxisSpacing: widget.crossAxisSpacing ?? 5,
                       maxCrossAxisExtent:
                           widget.iconSize != null ? widget.iconSize! + 10 : 50,
                     ),
